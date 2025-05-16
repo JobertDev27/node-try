@@ -2,6 +2,8 @@ import http from "http";
 import fs from "fs";
 import url from "url";
 
+const port = process.env.PORT;
+
 http
   .createServer((req, res) => {
     const q = url.parse(req.url, true);
@@ -19,4 +21,4 @@ http
       }
     });
   })
-  .listen(8080);
+  .listen(port);
